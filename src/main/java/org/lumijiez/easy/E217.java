@@ -1,7 +1,22 @@
 package org.lumijiez.easy;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    
+import java.util.HashSet;
+
+public class E217 {
+    public static void main(String[] args) {
+        int[] nums = {3, 3};
+
+        System.out.println(containsDuplicate(nums));
+    }
+
+    public static boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+
+        for (int num : nums) {
+            if (seen.contains(num)) return true;
+            seen.add(num);
+        }
+        return false;
+    }
+
 }
